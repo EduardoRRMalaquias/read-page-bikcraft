@@ -41,7 +41,7 @@ header {
   justify-items: center;
 }
 
-ul {
+nav ul {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
@@ -73,7 +73,7 @@ article {
   max-width: 1000px;
 }
 
-.introducao {
+.intro {
   background-color: white;
   padding: 40px;
   text-align: right;
@@ -88,7 +88,7 @@ article {
   font-size: 2rem;
 }
 
-.introducao::before {
+.intro::before {
   content: "";
   width: 60px;
   height: 4px;
@@ -111,6 +111,11 @@ article {
   background-color: #900;
 }
 
+.bike {
+  height: 100%;
+  object-fit: cover;
+}
+
 /* subtitulo */
 
 .subtitulo {
@@ -125,9 +130,12 @@ article {
 
 /* vantagbes */
 
-.vantagens {
+.lista-vantagens {
   background-color: white;
   padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .vantagens-item {
@@ -157,4 +165,93 @@ footer {
   text-align: center;
   padding: 40px;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 860px) {
+  .subtitulo {
+    text-align: center;
+    padding: 3vw;
+  }
+
+  article.vantagens {
+    grid-template-columns: 1fr;
+  }
+
+  .lista-vantagens {
+    padding: 20px;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .vantagens-item {
+    flex: 0 0 200px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  body {
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  header {
+    gap: 30px;
+  }
+
+  nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 45px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  article {
+    grid-template-columns: 1fr;
+  }
+
+  .intro {
+    text-align: center;
+    justify-items: start;
+  }
+  .intro::before {
+    display: none;
+  }
+
+  .subtitulo {
+    font-size: 3rem;
+  }
+
+  .lista-vantagens {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .vantagens-item {
+    gap: 10px;
+    padding: 0;
+  }
+
+  .vantagens-item img,
+  .vantagens-item h3 {
+    align-self: end;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  nav ul {
+    gap: 15px;
+  }
+
+  .subtitulo {
+    font-size: 2.3rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
 }
